@@ -21,8 +21,5 @@ export class Products {
   productImage: string;
 
   @Column()
-  productId: number;
-
-  @Column()
   CategoryId: number;
 }
