@@ -15,8 +15,14 @@ export class Products {
   description: string;
 
   @Column()
+  title: string;
+
+  @Column()
   productImage: string;
 
   @Column()
   productId: number;
+
+  @Column()
+  CategoryId: number;
 }
