@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { CateGory } from 'src/models/category/entity/category.entity';
+import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Products {
@@ -19,4 +20,7 @@ export class Products {
 
   @Column()
   productImage: string;
+
+  @ManyToMany(() => CateGory, (category) => category.product)
+  category: CateGory[];
 }

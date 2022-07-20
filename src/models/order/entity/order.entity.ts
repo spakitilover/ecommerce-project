@@ -1,4 +1,5 @@
-import { Column, PrimaryGeneratedColumn } from 'typeorm';
+import { User } from 'src/models/users/entity/users.entity';
+import { Column, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 export class Order {
   @PrimaryGeneratedColumn()
@@ -15,4 +16,7 @@ export class Order {
 
   @Column()
   total: number | string;
+
+  @ManyToOne(() => User, (user) => user.orders, { onDelete: 'SET NULL' })
+  user: User;
 }
